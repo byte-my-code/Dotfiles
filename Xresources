@@ -1,0 +1,37 @@
+! ----- Xterm Config -----
+XTerm.termName: xterm-256color
+XTerm.vt100.locale: false
+XTerm.vt100.utf8: true
+
+
+! --- Font
+xterm*faceName: Source Code Pro
+xterm*faceSize: 12
+xterm*renderFont: true
+
+! VT Font Menu: Unreadable
+xterm*faceSize1: 8
+! VT font menu: Tiny
+xterm*faceSize2: 10
+! VT font menu: Medium
+xterm*faceSize3: 12
+! VT font Menu: large
+xterm*faceSize4: 16
+! VT font menu: Huge
+xterm*faceSize5: 22
+
+! --- Std cut/paste
+xterm*vt100.Translations: #override \
+  Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
+
+! --- Color Theme
+#include "/home/graham/.themes/Xresources.dark"
+
+! --- Cursor Settings
+xterm*pointerColor: white
+xterm*pointerColorBackground: black
+xterm*cursorColor: yellow
+xterm*cursorBlink: true
